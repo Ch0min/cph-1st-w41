@@ -13,12 +13,8 @@ public class Dog extends Owner {
         this.isHungry = isHungry;
 
         offSpring = new ArrayList<Dog>();
-        for(int i = 0; i < offSpring.size(); i++) {
-            System.out.println(offSpring.get(i));
 
         }
-
-    }
 
     public String getDogName() {
         return dogName;
@@ -28,9 +24,11 @@ public class Dog extends Owner {
         return offSpring;
     }
 
-    public void setOffSpring(ArrayList<Dog> offSpring) {
-        this.offSpring = offSpring;
+    public ArrayList<Dog> setOffSpring(Dog dog) {
+        offSpring.add(dog);
+        return offSpring;
     }
+
 
     public void feedDog() {
         int energy = 100;
@@ -40,6 +38,11 @@ public class Dog extends Owner {
             isHungry = false;
         }
         System.out.println("Dog is fed");
+    }
+
+    @Override
+    public String toString() {
+        return this.getDogName();
     }
 }
 
