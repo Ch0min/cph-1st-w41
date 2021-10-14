@@ -1,8 +1,42 @@
 @startuml
-class Main {
+Main <-- Controller
+Main <-- CalculateVat
+Main <-- Dialog
+Controller <-- View
 
+
+
+class Main {
+}
+
+class Controller {
+-double userIn
+-double moms
+
++runController()
+}
+
+class CalculateVat {
+-int PRCVAT = 25;
+
++doVAT(double number)
+-double VAT
+}
+
+class Dialog {
+-double number
+
++doDiag()
+}
+
+class View {
+-String MSG
+-String CURRENCY
+
++doView(double result, String typeOfResult)
 
 }
+
 
 
 @enduml
